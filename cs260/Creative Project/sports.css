@@ -1,0 +1,277 @@
+body {
+    font-size: 16px;
+    padding: 0px 50px 0px 50px;
+    background-color:#F5F5F5;
+    font-family: 'Graduate', cursive;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header header"
+        "main sidebar"
+        "footer footer";
+    grid-gap: 20px;
+}
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-gap: 20px;
+}
+
+div {
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.header {
+    grid-area: header;
+    display: inline-block;
+    padding: 0px;
+    height: 40px;
+
+}
+
+h1
+{
+  font-family: 'Alfa Slab One', cursive;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color:maroon;
+    padding: 0 20px;
+    color: snow;
+}
+.sidebar2 {
+
+    color: snow;
+    grid-area: sidebar;
+    background-color:maroon;
+    padding: 0 20px;
+    color: snow;
+
+}
+
+.photo{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+
+.main {
+    grid-area: main;
+    padding: 0px;
+}
+
+.footer {
+    grid-area: footer;
+    display: table;
+    text-align: center;
+    background-color: gray;
+    padding: 0px;
+}
+
+.footer p {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px 0;
+}
+
+/*For the contact form :) */
+
+form {
+  /* Just to center the form on the page */
+  margin: 1em;
+  width: 600px;
+  /* To see the outline of the form */
+  padding: 1em;
+  border: 3px solid gray;
+  border-radius: 1em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+
+/* Responsive menu */
+/* See:
+   https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+*/
+
+/*Strip the ul of padding and list styling*/
+.header ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+}
+
+/*Create a horizontal list with spacing*/
+.header li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+.header li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    background: gray;
+    text-decoration: none;
+}
+/*Active color*/
+.header li a.active {
+    background: maroon;
+}
+/*Hover state for top level links*/
+.header li:hover a {
+    background: maroon;
+}
+/*Style for dropdown links*/
+.header li:hover ul a {
+    background: gray;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+.header li:hover ul a:hover {
+    background: maroon;
+    color: silver;
+}
+/*Hide dropdown links until they are needed*/
+.header li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+.header li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+.header li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+.header ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.header .show-menu {
+    text-decoration: none;
+    color: #fff;
+    background: maroon;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+.header input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+.header input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+    body {
+        padding: 0px;
+    }
+
+    .header {
+	height: auto;
+    }
+
+    /* Change grid */
+    .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+            "header"
+            "main"
+	           "sidebar"
+            "footer";
+	grid-gap: 20px;
+    }
+
+    /*Make dropdown links appear inline*/
+    .header ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    .header li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    .header ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .header .show-menu {
+        display:block;
+    }
+}
