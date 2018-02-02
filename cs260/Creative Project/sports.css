@@ -61,7 +61,15 @@ h1
     color: snow;
 
 }
+.mphoto {
+    height:50%;
+    width: 150%;
+}
 
+.spt {
+
+    font-size: 160%;
+}
 .photo{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -74,6 +82,28 @@ h1
     grid-area: main;
     padding: 0px;
 }
+
+
+
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: silver;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
 
 .footer {
     grid-area: footer;
@@ -88,6 +118,7 @@ h1
     vertical-align: middle;
     padding: 10px 0;
 }
+
 
 /*For the contact form :) */
 
@@ -166,6 +197,7 @@ button {
 .header li {
     display:inline-block;
     float: left;
+
     margin-right: 1px;
 }
 /*Style for menu links*/
